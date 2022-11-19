@@ -4,3 +4,5 @@ After enabling plugin there will be two additional menu entries in *Project/Tool
 
 *Icon Replacer* changes icon in exported Windows executable. Remember to use icon file created by *Icon Creator* because such icon is uncompressed and has exact required size.
 
+[Command line version of this tool can be found it here.](https://github.com/pkowal1982/godoticon)
+
