@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr2sgeg651iyo"]
+
+[ext_resource type="Script" path="res://addons/godot_icon/IconCreator.gd" id="1"]
+
+[node name="GodotIconCreator" type="ConfirmationDialog"]
+title = "Icon creator"
+size = Vector2i(494, 480)
+min_size = Vector2i(480, 480)
+script = ExtResource("1")
+
+[node name="ChooseImagesDialog" type="FileDialog" parent="."]
+title = "Choose image(s)"
+size = Vector2i(528, 480)
+mode = 1
+min_size = Vector2i(480, 480)
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.png; PNG files")
+
+[node name="ChooseIconDialog" type="FileDialog" parent="."]
+title = "Choose icon path"
+size = Vector2i(645, 480)
+min_size = Vector2i(480, 480)
+mode_overrides_title = false
+access = 2
+filters = PackedStringArray("*.ico; Windows icon files")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+
+[node name="ChooseImages" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Choose image(s)"
+clip_text = true
+
+[node name="ChooseIcon" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Choose icon"
+
+[node name="Images" type="GridContainer" parent="Buttons"]
+layout_mode = 2
+columns = 2
+
+[node name="Errors" type="Label" parent="Buttons"]
+layout_mode = 2
+text = "Please choose single file for your icon or six images with sizes:
+16x16, 32x32, 48x48, 64x64, 128x128 and 256x256."

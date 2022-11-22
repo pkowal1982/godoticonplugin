@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccudvp6ptf2lv"]
+
+[ext_resource type="Script" path="res://addons/godot_icon/IconReplacer.gd" id="1"]
+
+[node name="IconReplacer" type="ConfirmationDialog"]
+title = "Icon replacer"
+size = Vector2i(480, 480)
+min_size = Vector2i(480, 480)
+dialog_hide_on_ok = false
+script = ExtResource("1")
+
+[node name="ChooseExecutableDialog" type="FileDialog" parent="."]
+title = "Choose executable"
+size = Vector2i(645, 480)
+min_size = Vector2i(480, 480)
+mode_overrides_title = false
+access = 2
+filters = PackedStringArray("*.exe; Windows executables")
+
+[node name="ChooseIconDialog" type="FileDialog" parent="."]
+title = "Choose icon path"
+size = Vector2i(645, 480)
+min_size = Vector2i(480, 480)
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.ico; Windows icon files")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+
+[node name="ChooseExecutable" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Choose executable"
+clip_text = true
+
+[node name="ChooseIcon" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Choose icon"
+
+[node name="Images" type="GridContainer" parent="Buttons"]
+layout_mode = 2
+columns = 2
+
+[node name="Errors" type="Label" parent="Buttons"]
+layout_mode = 2
